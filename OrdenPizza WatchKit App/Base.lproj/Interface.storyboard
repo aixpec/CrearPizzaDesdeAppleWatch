@@ -1,15 +1,135 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="16A323" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--selInicio-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="selInicio" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="OrdenPizza_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="136" alignment="left" text="DeliveryPizza" textAlignment="center" id="wTm-tu-rn2"/>
+                        <separator alignment="left" id="M74-y1-647"/>
+                        <label alignment="left" text="Tamaño:" id="vQX-0C-ZZe"/>
+                        <picker height="100" alignment="left" focusStyle="sequence" indicatorMode="shownWhileFocused" id="Ttk-Jb-u95">
+                            <connections>
+                                <action selector="selectedItemPickTamanio:" destination="AgC-eL-Hgc" id="v1V-Fr-CpT"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="continuar" id="Zlh-FL-Jkd">
+                            <connections>
+                                <action selector="clickButtonContinuar" destination="AgC-eL-Hgc" id="mp9-b2-qUh"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pickTamanio" destination="Ttk-Jb-u95" id="95E-U1-lCV"/>
+                    </connections>
+                </controller>
             </objects>
+        </scene>
+        <!--Sel_Masa-->
+        <scene sceneID="zuW-eE-AlA">
+            <objects>
+                <controller identifier="Sel_Masa" id="eVu-4T-Jwg" customClass="InterfaceControllerMasa" customModule="OrdenPizza_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Tipo de masa:" id="iU3-at-NGe"/>
+                        <picker height="100" alignment="left" focusStyle="sequence" indicatorMode="shownWhileFocused" id="rlh-d8-D79">
+                            <connections>
+                                <action selector="selectedItemMasa:" destination="eVu-4T-Jwg" id="N6V-NU-zHV"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="continuar" id="7UN-kV-ub9">
+                            <connections>
+                                <action selector="clickButtonContinuar" destination="eVu-4T-Jwg" id="bSC-IK-wiL"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pickMasa" destination="rlh-d8-D79" id="UmV-cI-eGV"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="362" y="144"/>
+        </scene>
+        <!--selQueso-->
+        <scene sceneID="VHI-OO-M0F">
+            <objects>
+                <controller identifier="selQueso" id="xkh-7T-GmR" customClass="InterfaceControllerQueso" customModule="OrdenPizza_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Queso:" id="ZZm-0Z-lZz"/>
+                        <picker height="100" alignment="left" id="jfe-0B-6Uy">
+                            <connections>
+                                <action selector="selectedItemPickQueso:" destination="xkh-7T-GmR" id="Hpx-oZ-wPw"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="continuar" id="YPk-dq-Azh">
+                            <connections>
+                                <action selector="clickButtonContinuar" destination="xkh-7T-GmR" id="VEs-IZ-KdF"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="pickQueso" destination="jfe-0B-6Uy" id="etZ-a2-esf"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="577" y="137"/>
+        </scene>
+        <!--selIngredientes-->
+        <scene sceneID="3aK-3q-Khu">
+            <objects>
+                <controller identifier="selIngredientes" id="dZG-CB-88x" customClass="InterfaceControllerIngredientes" customModule="OrdenPizza_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Label" id="Jlw-7W-uFd"/>
+                        <table alignment="left" id="n2H-no-0qj">
+                            <items>
+                                <tableRow identifier="NameRowControllerIdentifier" id="AW0-GH-Bcv" customClass="NameRowController" customModule="OrdenPizza_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="yCY-u2-2UF">
+                                        <items>
+                                            <label alignment="left" text="Label" id="e9h-AG-XTA"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="nameLabel" destination="e9h-AG-XTA" id="Hfr-W6-75h"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="continuar" id="yb2-rw-GyG">
+                            <connections>
+                                <action selector="btnContinuar" destination="dZG-CB-88x" id="oXP-BT-hIa"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="tblIngredientes" destination="n2H-no-0qj" id="n27-IK-Hs5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="783" y="130"/>
+        </scene>
+        <!--Confirmar-->
+        <scene sceneID="pnQ-pB-UkF">
+            <objects>
+                <controller identifier="Confirmar" id="vjT-zB-plP" customClass="InterfaceControllerConfirmar" customModule="OrdenPizza_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Tu orden es:" id="10D-by-vi1" userLabel="Tu orden es:"/>
+                        <label alignment="left" numberOfLines="0" id="cIp-S2-h3o"/>
+                        <button width="1" alignment="left" title="confirmar" id="CPF-PN-0Xz">
+                            <connections>
+                                <action selector="clickButtonConfirmar" destination="vjT-zB-plP" id="3Mr-gu-eWR"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lblOrden" destination="cIp-S2-h3o" id="RTt-Jw-SFu"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1001" y="130"/>
         </scene>
     </scenes>
 </document>
