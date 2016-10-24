@@ -60,7 +60,7 @@
                 <controller identifier="selQueso" id="xkh-7T-GmR" customClass="InterfaceControllerQueso" customModule="OrdenPizza_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Queso:" id="ZZm-0Z-lZz"/>
-                        <picker height="100" alignment="left" id="jfe-0B-6Uy">
+                        <picker height="100" alignment="left" focusStyle="sequence" indicatorMode="shownWhileFocused" id="jfe-0B-6Uy">
                             <connections>
                                 <action selector="selectedItemPickQueso:" destination="xkh-7T-GmR" id="Hpx-oZ-wPw"/>
                             </connections>
@@ -83,7 +83,7 @@
             <objects>
                 <controller identifier="selIngredientes" id="dZG-CB-88x" customClass="InterfaceControllerIngredientes" customModule="OrdenPizza_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Label" id="Jlw-7W-uFd"/>
+                        <label alignment="left" text="Ingredientes:" id="Jlw-7W-uFd"/>
                         <table alignment="left" id="n2H-no-0qj">
                             <items>
                                 <tableRow identifier="NameRowControllerIdentifier" id="AW0-GH-Bcv" customClass="NameRowController" customModule="OrdenPizza_WatchKit_Extension">
